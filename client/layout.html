@@ -1,0 +1,18 @@
+<template name="layout">
+	<nav>
+		<ul>
+			<li><a class="brand" href="{{pathFor 'home'}}">Collections:</a></li>
+			
+			<li class="{{activeIf 'songs'}}">
+				<a href="{{pathFor 'songs'}}">Songs</a>
+			</li>
+			<li class="{{activeIf 'artists'}}">
+				<a href="{{pathFor 'artists'}}">Artists</a>
+			</li>
+		</ul>
+	</nav>
+
+	<div class="wrapper">
+		{{> yield}}
+	</div>
+</template>

@@ -1,0 +1,31 @@
+<template name="artists">
+	<div class="heading">
+		<h2>Artists</h2>
+		<a class="add" href="#" id="addArtist">Add Artist <i class="fa fa-plus"></i></a>
+	</div>
+	
+	<div class="container">
+		{{> reactiveTable collection=artists settings=settings}}
+	</div>
+
+	<div class="add-modal">
+		<div class="form-container">
+			<span class="modal-close">x</span>
+			<h3>Add Artist</h3>
+			<hr>
+			<form>
+				<div>
+					<label for="artist-fname">First Name</label>
+					<input type="text" id="artist-fname">
+				</div>
+
+				<div>
+					<label for="artist-lname">Last Name</label>
+					<input type="text" id="artist-lname">
+				</div>
+
+				<input type="submit" value="Add">
+			</form>
+		</div>
+	</div>
+</template>

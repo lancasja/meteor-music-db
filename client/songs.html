@@ -1,0 +1,24 @@
+<template name="songs">
+	<div class="heading">
+		<h2>Songs</h2>
+		<a class="add" href="#" id="addSong">Add Song <i class="fa fa-plus"></i></a>
+	</div>
+	
+	<div class="container">
+		{{> reactiveTable collection=songs settings=settings}}
+	</div>
+
+	<div class="add-modal">
+		<div class="form-container">
+			<span class="modal-close">x</span>
+			<h3>Add Song</h3>
+			<hr>
+			<form>
+				<label for="song-title">Title</label>
+				<input type="text" id="song-title">
+
+				<input type="submit" value="Add">
+			</form>
+		</div>
+	</div>
+</template>
