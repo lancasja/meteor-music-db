@@ -1,0 +1,1 @@
+Meteor application that takes user input from the browser to polulate collections in a MongoDB database.
