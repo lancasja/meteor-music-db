@@ -1,0 +1,16 @@
+<template name="editModal">
+	<div class="edit-modal">
+		<div class="form-container">
+			<span class="modal-close">x</span>
+			<h3>Edit <small>{{selectedSong.title}}</small></h3>
+			<hr>
+			<form>
+				<label for="song-title">Title</label>
+				<input type="text" id="newSongTitle">
+				<input type="submit" value="Save">
+
+				<a href="#" class="delete-song">Delete</a>
+			</form>
+		</div>
+	</div>
+</template>

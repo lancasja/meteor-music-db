@@ -8,17 +8,7 @@
 		{{> reactiveTable collection=songs settings=settings}}
 	</div>
 
-	<div class="add-modal">
-		<div class="form-container">
-			<span class="modal-close">x</span>
-			<h3>Add Song</h3>
-			<hr>
-			<form>
-				<label for="song-title">Title</label>
-				<input type="text" id="song-title">
+	{{> addModal}}
 
-				<input type="submit" value="Add">
-			</form>
-		</div>
-	</div>
+	{{> editModal}}
 </template>

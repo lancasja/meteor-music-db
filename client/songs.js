@@ -15,7 +15,7 @@ Template.songs.helpers({
 			fields: [
 				{ key: 'name', label: 'Name'},
 				{ key: 'title', label: 'Tilte'},
-				{ key: 'club', label: 'Label'}
+				{ key: 'label', label: 'Label'}
 			]
 		}
 	}
@@ -36,33 +36,28 @@ Template.songs.events({
 	// dissmiss modal when x is clicked
 	'click .modal-close': function(e, t) {
 		e.preventDefault();
-		var modal = t.find('.add-modal');
-		modal.style.top = '-200%';
+		var addModal = t.find('.add-modal');
+		var editModal = t.find('.edit-modal');
+
+		if (addModal.style.top === '0px') {
+			addModal.style.top = '-200%';
+		}
+
+		if (editModal.style.top === '0px') {
+			editModal.style.top = '-200%';
+		}
 	},
 
-	// take input from form and add to database
-	// this will have to be moved into a method
-	'submit form': function(e, t) {
-		e.preventDefault();
-		var modal = t.find('.add-modal');
+	'click .reactive-table tr': function(e, t) {
 
-		// form input values
-		var title = t.find('#song-title').value;
+		/* This will return the object (document)
+			that the selected row is associated with */
+		var song = this;
+		Session.set('song', song);
+		console.log(Session.get('song'));
 
-		// If the field is empty show an error message
-		if (title.length <= 0) {
-			console.log('Please enter a value.');
-		}
-		/* how can we clear the fields? */
-		else {
-			// Add to Collection
-			Songs.insert({
-				title: title
-			});
-
-			// dismiss modal
-			modal.style.top = '-200%';
-		}
+		var modal = t.find('.edit-modal');
+		modal.style.top = 0;
 	}
 });
 
